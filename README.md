@@ -6,7 +6,7 @@
 Luego, **Docker** puede crear una imagen leyendo esas instrucciones.
 
 <br>
-Primero creamos un archivo que se llamará `Dockerfile`
+Primero creamos un archivo que se llamará `Dockerfile`. A la raiz de nuestro proyecto. 
 
 
 ```
