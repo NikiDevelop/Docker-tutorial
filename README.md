@@ -44,5 +44,6 @@ WORKDIR /app
 
 Después de que se haya copiado nuestra aplicación se ejecutará el comando `RUN npm install` 
 
-`CMD` Ejecuta el comando para iniciar la aplicación.
+`CMD` Ejecuta el comando para iniciar la aplicación. <br>
+Nosotros la tenemos en el puerto 3000 y la podemos verla en el `localhost:3000/`
 
