@@ -33,7 +33,6 @@ COPY src /app/
 
 Después, configura el directorio de trabajo de la aplicación.<br>
 Si no se configura un `WORKDIR` Docker creará uno de forma predeterminada, por lo que es una buena idea configurarlo.
-
 <br> 
 
 ```
@@ -45,5 +44,43 @@ WORKDIR /app
 Después de que se haya copiado nuestra aplicación se ejecutará el comando `RUN npm install` 
 
 `CMD` Ejecuta el comando para iniciar la aplicación. <br>
-Nosotros la tenemos en el puerto 3000 y la podemos verla en el `localhost:3000/`
+Nosotros la tenemos en el puerto 3000 y la podemos verla en el `localhost:3000` <br>
 
+```
+FROM node:19-alpine
+
+COPY package.json /app/
+COPY src /app/
+
+WORKDIR /app
+
+RUN npm install 
+
+CMD [ "node", "server.js" ]
+
+```
+
+## Creamos la imagen del Dockerfile
+
+En la terminal ejecutamos los siguientes comandos: <br>
+Construimos nuestra `imagen` de la aplicación.
+
+```
+docker build -t node-app:1.0 .
+```
+ <br> 
+ 
+ Ahora es posible crear un contenedor con esta imagen. Alojada en el puerto `localhost:3000`
+ ```
+docker run -d -p 3000:3000 node-app:1.0
+```
+<br>
+
+Comandos que podemos ejecutar para ver nuestras imagenes: `docker images`, para ver las que se están ejecutando usaremos: `docker ps`. 
+<br>
+
+Por último ejecutamos `docker logs ID` el ID es el de la imagen que hemos creado.
+
+```
+docker logs 585bcd40e851
+```
