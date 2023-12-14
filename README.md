@@ -23,9 +23,24 @@ Básicamente este sería nuestro archivo `Dockerfile`, vamos linea por linea:
 <br>
 En la primera línea del código `FROM node:19-alpine`  
 <br>
-Después, configura el directorio de trabajo de la aplicación.<br>
-Si no se configura un `WORKDIR`, Docker creará uno de forma predeterminada, por lo que es una buena idea configurarlo.<br>
+Agregamos `COPY package.json /app/` que copiará las dependencias del proyecto, y le pasamos también nuestra aplicación  `COPY src /app/` 
+
 ```
-...
+COPY package.json /app/
+COPY src /app/
+```
+<br>
+Después, configura el directorio de trabajo de la aplicación.<br>
+Si no se configura un `WORKDIR`, Docker creará uno de forma predeterminada, por lo que es una buena idea configurarlo.
+<br>
+
+```
 WORKDIR /app
 ```
+<br>
+Después de que se haya copiado nuestra aplicación se ejecutará el comando `RUN npm install` 
+
+<br>
+
+`CMD` Ejecuta el comando para iniciar la aplicación.
+
