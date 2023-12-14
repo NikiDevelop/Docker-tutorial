@@ -24,8 +24,11 @@ CMD [ "node", "server.js" ]
 ```
 Básicamente este sería nuestro archivo `Dockerfile`, vamos linea por linea: 
 <br>
-En la primera línea del código `FROM node:19-alpine`  
+En la primera línea del código `FROM` le damos las instrucciones para configurar la imagen de la aplicación. <br> 
+Puedes usar el que quieras. ["Docker Hub image"](https://hub.docker.com/_/node/)
+
 <br>
+
 Agregamos `COPY package.json /app/` que copiará las dependencias del proyecto, y le pasamos también nuestra aplicación  `COPY src /app/` 
 
 ```
