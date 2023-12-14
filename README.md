@@ -7,7 +7,7 @@ Luego, **Docker** puede crear una imagen leyendo esas instrucciones.
 
 <br>
 
-Primero creamos un archivo que se llamará `Dockerfile`, a la raiz de nuestro proyecto. 
+Primero creamos un archivo que se llamará `Dockerfile`, a la raíz de nuestro proyecto. 
 
 
 ```
@@ -22,10 +22,15 @@ RUN npm install
 
 CMD [ "node", "server.js" ]
 ```
-Básicamente este sería nuestro archivo `Dockerfile`, vamos linea por linea: 
-<br>
+Básicamente, este sería nuestro archivo `Dockerfile`, vamos línea por línea: 
+<br> <br>
+
 En la primera línea del código `FROM` le damos las instrucciones para configurar la imagen de la aplicación. <br> 
-Puedes usar el que quieras. ["Docker Hub image"](https://hub.docker.com/_/node/)
+Puedes usar el que quieras. [Docker Hub image](https://hub.docker.com/_/node/)
+
+```
+FROM node:19-alpine
+```
 
 <br>
 
@@ -82,7 +87,7 @@ docker run -d -p 3000:3000 node-app:1.0
 ```
 <br>
 
-Comandos que podemos ejecutar para ver nuestras imagenes: `docker images`, para ver las que se están ejecutando usaremos: `docker ps`. 
+Comandos que podemos ejecutar para ver nuestras imágenes: `docker images`, para ver las que se están ejecutando usaremos: `docker ps`. 
 <br>
 
 Por último ejecutamos `docker logs ID` el ID es el de la imagen que hemos creado.
