@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res)=>{
-    res.send("Welcome to Dockerfile from Node.js")
+    res.send("Tutorial Dockerfile from Node.js")
 });
 
 app.listen(3000, function () {
