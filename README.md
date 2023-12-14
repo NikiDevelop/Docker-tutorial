@@ -30,17 +30,19 @@ COPY package.json /app/
 COPY src /app/
 ```
 <br>
+
 Después, configura el directorio de trabajo de la aplicación.<br>
-Si no se configura un `WORKDIR`, Docker creará uno de forma predeterminada, por lo que es una buena idea configurarlo.
-<br>
+Si no se configura un `WORKDIR` Docker creará uno de forma predeterminada, por lo que es una buena idea configurarlo.
+
+<br> 
 
 ```
 WORKDIR /app
 ```
-<br>
-Después de que se haya copiado nuestra aplicación se ejecutará el comando `RUN npm install` 
 
 <br>
+
+Después de que se haya copiado nuestra aplicación se ejecutará el comando `RUN npm install` 
 
 `CMD` Ejecuta el comando para iniciar la aplicación.
 
