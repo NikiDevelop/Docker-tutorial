@@ -3,7 +3,9 @@
 </div>
 
 **Dockerfile** es un documento de texto que contiene comandos para ensamblar una `imagen`.
-Luego, **Docker** puede crear una imagen leyendo esas instrucciones.<br>
+Luego, **Docker** puede crear una imagen leyendo esas instrucciones.
+
+<br>
 Primero creamos un archivo que se llamará `Dockerfile`
 
 
